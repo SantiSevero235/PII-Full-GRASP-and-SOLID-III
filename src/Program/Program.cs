@@ -26,10 +26,18 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
+           /* Imprime receta sin polimorfismo 
             AllInOnePrinter printer = new AllInOnePrinter();
             printer.PrintRecipe(recipe, Destination.Console);
-            printer.PrintRecipe(recipe, Destination.File);
-        }
+            printer.PrintRecipe(recipe, Destination.File);*/
+
+            //Imprime receta pero usando Polimorfismo esta vez
+            IPrinter printer; //Se implementa la interfaz IPrinter que tiene dependencia con Recipe y Destination
+            printer = new ConsolePrinter();
+            printer.PrintRecipe(recipe,Destination.Console);
+            printer = new FilePrinter();
+            printer.PrintRecipe(recipe,Destination.File);
+        }   //Tanto ConsolePrinter como FilePrinter tambien tienen dependencia con estas anteriormente mencionadas 
 
         private static void PopulateCatalogs()
         {

@@ -13,8 +13,8 @@ namespace Full_GRASP_And_SOLID.Library
         Console,
         File
     }
-
-    public class AllInOnePrinter
+    //No se utiliza esta clase ya que a traves de las nuevas clases hechas se encargan de hacer lo que esta clase haga.
+    /*public class AllInOnePrinter
     {
         public void PrintRecipe(Recipe recipe, Destination destination)
         {
@@ -27,5 +27,5 @@ namespace Full_GRASP_And_SOLID.Library
                 File.WriteAllText("Recipe.txt", recipe.GetTextToPrint());
             }
         }
-    }
+    }*/
 }
